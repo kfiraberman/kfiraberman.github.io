@@ -170,10 +170,6 @@ a /* hyper link text style */
     font-style: normal;
 }
 
-
-
-/*Ahmed's code for mobile responsiveness*/
-
 /*These styles apply from zero to below px wide screen only.*/
 
 @media only screen and (max-width:  620px){
@@ -192,6 +188,3 @@ a /* hyper link text style */
     margin: 0px 20px 0 0;
   }
 }
-
-
-
