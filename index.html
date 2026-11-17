@@ -511,6 +511,13 @@ h1{font-size:clamp(58px,6vw,88px);line-height:1.02;letter-spacing:-.07em;font-we
 @keyframes knobRotate{from{transform:translateX(-5px)}to{transform:translateX(5px)}}
 @keyframes cursorFloat{from{transform:translate(0,0)}to{transform:translate(-6px,6px)}}
 @keyframes boxPulse{from{transform:scale(1)} to {transform:scale(1.08)}}
+
+/* Real research video previews: the Canvas UI plays only from 0:10 to 0:16. */
+.thumb-video{background:#14242b;isolation:isolate}
+.thumb-video .paper-preview-video{position:absolute;inset:0;z-index:1;width:100%;height:100%;display:block;object-fit:contain;background:#14242b}
+.thumb-video.canvas-video .paper-preview-video{object-fit:cover;object-position:center}
+.thumb-video .thumb-fallback{z-index:0}
+@media (prefers-reduced-motion: reduce){.thumb-video .paper-preview-video{animation:none}}
 </style>
 </head>
 <body>
@@ -557,7 +564,7 @@ h1{font-size:clamp(58px,6vw,88px);line-height:1.02;letter-spacing:-.07em;font-we
 <div class="wrap">
 <div class="section-head">
 <div class="section-left"><div class="kicker mono">01 / From research to real life</div><h2>Selected work<span class="title-dot">.</span></h2></div>
-<p class="section-desc">A more balanced view of shipped products and influential research: real-time video editing, DreamBooth, virtual try-on, AI Lenses, and Magic Eraser.</p>
+
 </div>
 <div class="work-grid-equal">
 <article aria-label="Real-time video editing" class="card work-card video-card">
@@ -647,44 +654,44 @@ h1{font-size:clamp(58px,6vw,88px);line-height:1.02;letter-spacing:-.07em;font-we
 </div>
 <span class="archive-summary mono">35 papers · 2017–2026</span>
 </div><div class="archive-shell"><article class="pub-row" data-topic="editing">
-<div class="thumb thumb-0 thumb-adaor"><img alt="Illustration from Continuous Control of Editing Models via Adaptive-Origin Guidance" class="anim-pan" loading="lazy" onerror="this.style.display='none'" src="https://ar5iv.labs.arxiv.org/html/2602.03826/assets/adaor_teaser-final.png"/><span class="thumb-fallback mono">2026</span><span class="adaor-overlay"><span class="adaor-knob"></span><span class="adaor-track"></span></span></div>
+<div class="thumb thumb-video adaor-video"><video class="paper-preview-video" aria-label="Animated bunny-to-chocolate editing demonstration" autoplay muted playsinline preload="metadata" loop poster="https://ar5iv.labs.arxiv.org/html/2602.03826/assets/adaor_teaser-final.png"><source src="https://adaor-paper.github.io/assets/videos/bunny_to_chocolate_480_832_32/transient_output.mp4" type="video/mp4"></video><span class="thumb-fallback mono">Video</span></div>
 <div class="pub-info"><div class="pub-title">Continuous Control of Editing Models via Adaptive-Origin Guidance</div><div class="pub-authors">Alon Wolf, Chen Katzir, <strong>Kfir Aberman</strong>, Or Patashnik</div>
 <div class="pub-meta"><span>SIGGRAPH 2026</span><span class="topic-dot">·</span><span>Editing</span></div>
 </div>
 <div class="pub-actions"><a href="https://arxiv.org/abs/2602.03826" rel="noopener" target="_blank">Paper ↗</a><a href="https://adaor-paper.github.io/" rel="noopener" target="_blank">Project ↗</a></div>
 </article><article class="pub-row" data-topic="other">
-<div class="thumb thumb-1 thumb-canvas"><img alt="Illustration from Canvas-to-Image: Compositional Image Generation with Multimodal Controls" class="anim-pan-wide" loading="lazy" onerror="this.style.display='none'" src="https://snap-research.github.io/canvas-to-image/main_figs/teaser.png"/><span class="thumb-fallback mono">2026</span><span class="canvas-cursor"></span><span class="canvas-box"></span></div>
-<div class="pub-info"><div class="pub-title">Canvas-to-Image: Compositional Image Generation with Multimodal Controls</div><div class="pub-authors">Yusuf Dalva, Gordon Guocheng Qian, Maya Goldenberg, Tsai-Shien Chen, , Sergey Tulyakov, Pinar Yanardag, Kuan-Chieh Jackson Wang</div>
+<div class="thumb thumb-video canvas-video"><video class="paper-preview-video" aria-label="Canvas-to-Image UI demo from ten to sixteen seconds" autoplay muted playsinline preload="metadata" data-clip-start="10" data-clip-end="16" poster="https://snap-research.github.io/canvas-to-image/main_figs/teaser.png"><source src="https://snap-research.github.io/canvas-to-image/ui-demo.mp4" type="video/mp4"></video><span class="thumb-fallback mono">Video</span></div>
+<div class="pub-info"><div class="pub-title">Canvas-to-Image: Compositional Image Generation with Multimodal Controls</div><div class="pub-authors">Yusuf Dalva, Gordon Guocheng Qian, Maya Goldenberg, Tsai-Shien Chen, <strong>Kfir Aberman</strong>, Sergey Tulyakov, Pinar Yanardag, Kuan-Chieh Jackson Wang</div>
 <div class="pub-meta"><span>SIGGRAPH 2026</span><span class="topic-dot">·</span><span>Control</span></div>
 </div>
 <div class="pub-actions"><a href="https://arxiv.org/abs/2511.21691" rel="noopener" target="_blank">Paper ↗</a><a href="https://snap-research.github.io/canvas-to-image/" rel="noopener" target="_blank">Project ↗</a></div>
 </article><article class="pub-row" data-topic="other">
 <div class="thumb thumb-2 thumb-groupfocus"><img alt="Illustration from Scaling Group Inference for Diverse and High-Quality Generation" class="anim-zoom-subtle" loading="lazy" onerror="this.style.display='none'" src="https://www.cs.cmu.edu/~group-inference/images/teaser_v2_website.png"/><span class="thumb-fallback mono">2026</span></div>
-<div class="pub-info"><div class="pub-title">Scaling Group Inference for Diverse and High-Quality Generation</div><div class="pub-authors">Gaurav Parmar, Or Patashnik, Daniil Ostashev, Kuan-Chieh Wang, , Srinivasa Narasimhan, Jun-Yan Zhu</div>
+<div class="pub-info"><div class="pub-title">Scaling Group Inference for Diverse and High-Quality Generation</div><div class="pub-authors">Gaurav Parmar, Or Patashnik, Daniil Ostashev, Kuan-Chieh Wang, <strong>Kfir Aberman</strong>, Srinivasa Narasimhan, Jun-Yan Zhu</div>
 <div class="pub-meta"><span>ICLR 2026</span><span class="topic-dot">·</span><span>Generative models</span></div>
 </div>
 <div class="pub-actions"><a href="https://arxiv.org/abs/2508.15773" rel="noopener" target="_blank">Paper ↗</a><a href="https://www.cs.cmu.edu/~group-inference/" rel="noopener" target="_blank">Project ↗</a></div>
 </article><article class="pub-row" data-topic="video">
 <div class="thumb thumb-3 thumb-videofocus"><img alt="Illustration from Video Alchemist: Multi-subject Open-set Personalization in Video Generation" class="anim-pan-diag" loading="lazy" onerror="this.style.display='none'" src="https://cdn.bytez.com/mobilePapers/v2/cvpr/34944/images/0-0.png"/><span class="thumb-fallback mono">2025</span></div>
-<div class="pub-info"><div class="pub-title">Video Alchemist: Multi-subject Open-set Personalization in Video Generation</div><div class="pub-authors">Tsai-Shien Chen, Aliaksandr Siarohin, Willi Menapace, Yuwei Fang, Kwot Sin Lee, Ivan Skorokhodov, , Jun-Yan Zhu, Ming-Hsuan Yang, Sergey Tulyakov</div>
+<div class="pub-info"><div class="pub-title">Video Alchemist: Multi-subject Open-set Personalization in Video Generation</div><div class="pub-authors">Tsai-Shien Chen, Aliaksandr Siarohin, Willi Menapace, Yuwei Fang, Kwot Sin Lee, Ivan Skorokhodov, <strong>Kfir Aberman</strong>, Jun-Yan Zhu, Ming-Hsuan Yang, Sergey Tulyakov</div>
 <div class="pub-meta"><span>CVPR 2025</span><span class="topic-dot">·</span><span>Video</span></div>
 </div>
 <div class="pub-actions"><a href="https://arxiv.org/abs/2501.06187" rel="noopener" target="_blank">Paper ↗</a></div>
 </article><article class="pub-row" data-topic="editing">
 <div class="thumb thumb-0"><img alt="Illustration from Stable Flow: Vital Layers for Training-Free Image Editing" loading="lazy" onerror="this.style.display='none'" src="https://omriavrahami.com/stable-flow/static/images/teaser_1200_630.jpg"/><span class="thumb-fallback mono">2025</span></div>
-<div class="pub-info"><div class="pub-title">Stable Flow: Vital Layers for Training-Free Image Editing</div><div class="pub-authors">Omri Avrahami, Or Patashnik, Ohad Fried, Egor Nemchinov, , Dani Lischinski, Daniel Cohen-Or</div>
+<div class="pub-info"><div class="pub-title">Stable Flow: Vital Layers for Training-Free Image Editing</div><div class="pub-authors">Omri Avrahami, Or Patashnik, Ohad Fried, Egor Nemchinov, <strong>Kfir Aberman</strong>, Dani Lischinski, Daniel Cohen-Or</div>
 <div class="pub-meta"><span>CVPR 2025</span><span class="topic-dot">·</span><span>Editing</span></div>
 </div>
 <div class="pub-actions"><a href="https://arxiv.org/abs/2411.14430" rel="noopener" target="_blank">Paper ↗</a><a href="https://omriavrahami.com/stable-flow/" rel="noopener" target="_blank">Project ↗</a></div>
 </article><article class="pub-row" data-topic="personalization">
 <div class="thumb thumb-1"><img alt="Illustration from Omni-ID: Holistic Identity Representation Designed for Generative Tasks" loading="lazy" onerror="this.style.display='none'" src="https://snap-research.github.io/Omni-ID/assets/images/comparison_motivation.png"/><span class="thumb-fallback mono">2025</span></div>
-<div class="pub-info"><div class="pub-title">Omni-ID: Holistic Identity Representation Designed for Generative Tasks</div><div class="pub-authors">Guocheng Qian, Kuan-Chieh Wang, Or Patashnik, Negin Heravi, Daniil Ostashev, Sergey Tulyakov, Daniel Cohen-Or, </div>
+<div class="pub-info"><div class="pub-title">Omni-ID: Holistic Identity Representation Designed for Generative Tasks</div><div class="pub-authors">Guocheng Qian, Kuan-Chieh Wang, Or Patashnik, Negin Heravi, Daniil Ostashev, Sergey Tulyakov, Daniel Cohen-Or, <strong>Kfir Aberman</strong></div>
 <div class="pub-meta"><span>CVPR 2025</span><span class="topic-dot">·</span><span>Personalization</span></div>
 </div>
 <div class="pub-actions"><a href="https://arxiv.org/abs/2412.09694" rel="noopener" target="_blank">Paper ↗</a><a href="https://snap-research.github.io/Omni-ID/" rel="noopener" target="_blank">Project ↗</a></div>
 </article><article class="pub-row" data-topic="video">
 <div class="thumb thumb-2"><img alt="Illustration from Dynamic Concepts Personalization from Single Videos" loading="lazy" onerror="this.style.display='none'" src="https://snap-research.github.io/dynamic_concepts/set.png"/><span class="thumb-fallback mono">2025</span></div>
-<div class="pub-info"><div class="pub-title">Dynamic Concepts Personalization from Single Videos</div><div class="pub-authors">Rameen Abdal, Or Patashnik, Ivan Skorokhodov, Willi Menapace, Aliaksandr Siarohin, Sergey Tulyakov, Daniel Cohen-Or, </div>
+<div class="pub-info"><div class="pub-title">Dynamic Concepts Personalization from Single Videos</div><div class="pub-authors">Rameen Abdal, Or Patashnik, Ivan Skorokhodov, Willi Menapace, Aliaksandr Siarohin, Sergey Tulyakov, Daniel Cohen-Or, <strong>Kfir Aberman</strong></div>
 <div class="pub-meta"><span>SIGGRAPH 2025</span><span class="topic-dot">·</span><span>Video</span></div>
 </div>
 <div class="pub-actions"><a href="https://arxiv.org/abs/2502.14844" rel="noopener" target="_blank">Paper ↗</a><a href="https://snap-research.github.io/dynamic_concepts/" rel="noopener" target="_blank">Project ↗</a></div>
@@ -708,7 +715,7 @@ h1{font-size:clamp(58px,6vw,88px);line-height:1.02;letter-spacing:-.07em;font-we
 <div class="pub-actions"><a href="https://arxiv.org/abs/2311.09571" rel="noopener" target="_blank">Paper ↗</a><a href="https://threedle.github.io/3d-paintbrush/" rel="noopener" target="_blank">Project ↗</a></div>
 </article><article class="pub-row older-work" data-topic="personalization">
 <div class="thumb thumb-2"><img alt="Teaser figure for HyperDreamBooth: HyperNetworks for Fast Personalization of Text-to-Image Models" loading="lazy" onerror="this.style.display='none'" src="./images/HDB.jpg"/><span class="thumb-fallback mono">2024</span></div>
-<div class="pub-info"><div class="pub-title">HyperDreamBooth: HyperNetworks for Fast Personalization of Text-to-Image Models</div><div class="pub-authors">Nataniel Ruiz, Yuanzhen Li, Varun Jampani, Wei Wei, Tingbo Hou, Yael Pritch, Neal Wadhwa, Michael Rubinstein, </div>
+<div class="pub-info"><div class="pub-title">HyperDreamBooth: HyperNetworks for Fast Personalization of Text-to-Image Models</div><div class="pub-authors">Nataniel Ruiz, Yuanzhen Li, Varun Jampani, Wei Wei, Tingbo Hou, Yael Pritch, Neal Wadhwa, Michael Rubinstein, <strong>Kfir Aberman</strong></div>
 <div class="pub-meta"><span>CVPR 2024</span><span class="topic-dot">·</span><span>Personalization</span></div>
 </div>
 <div class="pub-actions"><a href="https://arxiv.org/abs/2307.06949" rel="noopener" target="_blank">Paper ↗</a><a href="https://hyperdreambooth.github.io/" rel="noopener" target="_blank">Project ↗</a></div>
@@ -867,5 +874,20 @@ h1{font-size:clamp(58px,6vw,88px);line-height:1.02;letter-spacing:-.07em;font-we
 })();
 // An X embed is optional and may be blocked by privacy settings or network access.
 // Keep a direct link to the original post visible as a durable fallback.
-</script><!-- Featured video poster from user-provided screenshot. Snap Lens image is sourced from Snap newsroom. --></body>
+</script><!-- Featured video poster from user-provided screenshot. Snap Lens image is sourced from Snap newsroom. -->
+<script>
+/* Loop the Canvas-to-Image UI demo over the requested six-second segment. */
+(function(){
+  const v=document.querySelector('.canvas-video video[data-clip-start][data-clip-end]');
+  if(!v)return;
+  const start=Number(v.dataset.clipStart),end=Number(v.dataset.clipEnd);
+  if(!(start>=0&&end>start))return;
+  const seekStart=()=>{if(v.readyState>=1&&Math.abs(v.currentTime-start)>0.3){try{v.currentTime=start}catch(e){}}};
+  v.addEventListener('loadedmetadata',()=>{seekStart();v.play().catch(()=>{});});
+  v.addEventListener('timeupdate',()=>{if(v.currentTime>=end-0.08){try{v.currentTime=start}catch(e){}if(v.paused)v.play().catch(()=>{});}});
+  v.addEventListener('ended',()=>{try{v.currentTime=start}catch(e){}v.play().catch(()=>{});});
+  if(v.readyState>=1)seekStart();
+})();
+</script>
+</body>
 </html>
